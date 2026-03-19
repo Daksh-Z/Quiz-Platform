@@ -1,34 +1,107 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Explosive Dark Theme (Default Core) */
+  --md-sys-color-background: #09090e;
+  --md-sys-color-on-background: #f8f9fa;
+  --md-sys-color-surface: rgba(22, 23, 28, 0.65); /* Translucent surface for glassmorphism */
+  --md-sys-color-on-surface: #e2e8f0;
+  --md-sys-color-surface-variant: rgba(35, 38, 48, 0.7);
+  --md-sys-color-on-surface-variant: #94a3b8;
+  
+  --md-sys-color-outline: rgba(255, 255, 255, 0.12);
+  --md-sys-color-error: #ff2a5f;
+  --md-sys-color-on-error: #ffffff;
+  
+  /* Cyberpunk / Retrowave Explosive Accents */
+  --md-sys-color-primary: #00f2fe; /* Electric Cyan */
+  --md-sys-color-on-primary: #0f172a; /* Dark text for bright cyan */
+  --md-sys-color-primary-container: rgba(0, 242, 254, 0.15);
+  --md-sys-color-on-primary-container: #4facfe;
+
+  --md-sys-color-secondary: #ff0844; /* Explosive Red/Magenta gradient pair */
+  
+  --md-sys-color-success: #00f5d4;
+  --md-sys-color-warning: #fee140;
+
+  /* Glowing Elevations */
+  --md-sys-elevation-1: 0 8px 32px 0 rgba(0, 242, 254, 0.1);
+  --md-sys-elevation-2: 0 12px 48px 0 rgba(0, 242, 254, 0.25);
+  --md-sys-elevation-3: 0 16px 64px 0 rgba(255, 8, 68, 0.3);
+
+  /* Modern Smoothed Corners */
+  --md-sys-shape-corner-small: 12px;
+  --md-sys-shape-corner-medium: 20px;
+  --md-sys-shape-corner-large: 28px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-8: 48px;
+  --spacing-10: 64px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Sleek Vibrant Light Theme */
+    --md-sys-color-background: #ffffff;
+    --md-sys-color-on-background: #0f172a;
+    --md-sys-color-surface: rgba(255, 255, 255, 0.75);
+    --md-sys-color-on-surface: #1e293b;
+    --md-sys-color-surface-variant: rgba(241, 245, 249, 0.85);
+    --md-sys-color-on-surface-variant: #64748b;
+    
+    --md-sys-color-outline: rgba(0, 0, 0, 0.08);
+    
+    --md-sys-color-primary: #4338ca; /* Indigo */
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #e0e7ff;
+    --md-sys-color-on-primary-container: #3730a3;
+
+    --md-sys-color-secondary: #ec4899; /* Pink */
+
+    --md-sys-elevation-1: 0 8px 32px 0 rgba(67, 56, 202, 0.08);
+    --md-sys-elevation-2: 0 12px 48px 0 rgba(67, 56, 202, 0.15);
+    --md-sys-elevation-3: 0 16px 64px 0 rgba(236, 72, 153, 0.2);
   }
 }
 
-html {
-  height: 100%;
-}
-
-html,
-body {
+html, body {
   max-width: 100vw;
   overflow-x: hidden;
+  min-height: 100%;
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--md-sys-color-on-background);
+  background-color: var(--md-sys-color-background);
+  
+  /* Explosive Mesh Gradient Background */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.18), transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(255, 8, 68, 0.15), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(138, 43, 226, 0.2), transparent 50%);
+  background-attachment: fixed;
+  background-size: cover;
+
+  font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(67, 56, 202, 0.08), transparent 45%),
+      radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.08), transparent 45%),
+      radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.08), transparent 50%);
+  }
 }
 
 * {
@@ -38,12 +111,31 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--md-sys-color-primary);
   text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+  text-shadow: 0 0 12px var(--md-sys-color-primary-container);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glassmorphism bindings for global interactive containers */
+div[class*='container'], div[class*='Card'], div[class*='headerArea'], form[class*='form'] {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--md-sys-color-outline);
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+button[type='submit']:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.15);
+  box-shadow: var(--md-sys-elevation-2);
 }

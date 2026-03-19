@@ -1,0 +1,25 @@
+@keyframes morphBlob {
+  0% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+  34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+  100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+}
+
+.glow {
+  position: fixed;
+  width: 240px;
+  height: 240px;
+  --core-x: 50%;
+  background: radial-gradient(circle at var(--core-x) 50%, rgba(0, 242, 254, 0.4), transparent 60%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: opacity 0.3s;
+  animation: morphBlob 12s ease-in-out infinite both alternate;
+}
+
+@media (prefers-color-scheme: light) {
+  .glow {
+    background: radial-gradient(circle at var(--core-x) 50%, rgba(67, 56, 202, 0.3), transparent 60%);
+  }
+}

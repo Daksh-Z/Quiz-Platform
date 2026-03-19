@@ -1,0 +1,192 @@
+.container {
+  min-height: calc(100vh - 64px);
+  background-color: var(--md-sys-color-surface-variant);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px;
+}
+
+.headerArea {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pageTitle {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 8px;
+}
+
+.pageSubtitle {
+  font-size: 16px;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: 24px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface-variant);
+  padding: 8px 16px;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+.activeFilter {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border-color: var(--md-sys-color-primary-container);
+}
+
+.main {
+  width: 100%;
+  max-width: 900px;
+}
+
+.tableCard {
+  background-color: var(--md-sys-color-surface);
+  border-radius: var(--md-sys-shape-corner-medium);
+  box-shadow: var(--md-sys-elevation-1);
+  overflow: hidden;
+  border: 1px solid var(--md-sys-color-outline);
+  margin-bottom: 40px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  text-align: left;
+  padding: 16px 24px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+  border-bottom: 1px solid var(--md-sys-color-outline);
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.td {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+  vertical-align: middle;
+}
+
+.tr:last-child .td {
+  border-bottom: none;
+}
+
+.tr:hover {
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.rankBadge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.rank1 {
+  background-color: #fce8e6;
+  color: #d93025;
+}
+
+.rank2 {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-primary);
+}
+
+.rank3 {
+  background-color: #e6f4ea;
+  color: #1e8e3e;
+}
+
+.participantInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.participantName {
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+}
+
+.score {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--md-sys-color-on-surface);
+}
+
+.timeCell {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  padding: 12px 32px;
+  border-radius: var(--md-sys-shape-corner-medium);
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: var(--md-sys-elevation-1);
+  transition: all 0.2s ease;
+}
+
+.primaryBtn:hover {
+  background-color: #155bb5;
+  box-shadow: var(--md-sys-elevation-2);
+  text-decoration: none;
+}

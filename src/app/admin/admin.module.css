@@ -1,0 +1,228 @@
+.container {
+  padding: 48px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: var(--md-sys-color-on-background);
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: 32px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.statCard {
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 24px;
+  border-radius: var(--md-sys-shape-corner-medium);
+  text-align: center;
+}
+
+.statCard h3 {
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface-variant);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.statNumber {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+}
+
+.formsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.formCard {
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 32px;
+  border-radius: var(--md-sys-shape-corner-medium);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formCard h3 {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.inputGroup {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.submitBtn {
+  background: var(--md-sys-color-primary);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: var(--md-sys-shape-corner-small);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--md-sys-color-error);
+  font-size: 14px;
+}
+
+.listContainer h2 {
+  margin-bottom: 16px;
+}
+
+.quizList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.quizItem {
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 16px 24px;
+  border-radius: var(--md-sys-shape-corner-medium);
+}
+
+.quizItem h4 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.quizDetails {
+  font-size: 13px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.deleteBtn {
+  background-color: transparent;
+  color: var(--md-sys-color-error);
+  border: 1px solid var(--md-sys-color-error);
+  padding: 6px 16px;
+  border-radius: var(--md-sys-shape-corner-small);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.2s;
+  margin-top: 16px;
+  display: block;
+}
+
+.deleteBtn:hover {
+  background-color: #fce8e6;
+}
+
+.deleteBtnSmall {
+  background-color: transparent;
+  color: var(--md-sys-color-error);
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+  margin-left: 12px;
+}
+
+.questionList {
+  margin-top: 16px;
+  padding-left: 16px;
+  border-left: 2px solid var(--md-sys-color-outline);
+}
+
+.questionItem {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputSmall {
+  padding: 8px 12px;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
+  width: 160px;
+}
+
+.secondaryBtnSmall {
+  background: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--md-sys-shape-corner-small);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.secondaryBtnSmall:hover {
+  opacity: 0.8;
+}
+
+.userCard {
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 20px 24px;
+  border-radius: var(--md-sys-shape-corner-medium);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.userActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
