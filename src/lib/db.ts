@@ -1,7 +1,12 @@
 import Database from 'better-sqlite3';
 import bcrypt from 'bcryptjs';
 
-const dbPath = 'quiz.db';
+import path from 'path';
+
+// Vercel Serverless exclusively locks the root filesystem to Read-Only!
+// We must aggressively re-route the SQLite database instance directly into the writable /tmp volume if deployed via Vercel
+const isVercel = process.env.VERCEL === '1';
+const dbPath = isVercel ? path.join('/tmp', 'quiz.db') : 'quiz.db';
 
 const globalForDb = global as unknown as {
   db_v2: Database.Database | undefined
