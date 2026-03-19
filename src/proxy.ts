@@ -5,7 +5,7 @@ import { jwtVerify } from 'jose';
 const secretKey = process.env.SESSION_SECRET || 'super-secret-key-for-quiz-platform';
 const encodedKey = new TextEncoder().encode(secretKey);
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   
   // Protect /admin routes and /quiz taking routes
